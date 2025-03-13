@@ -1,0 +1,11 @@
+---
+export interface Props {
+  label: string;
+  link: string;
+}
+const { label, link } = Astro.props;
+---
+
+<li>
+  <a href={link} class="scroll-link">{label}</a>
+</li>

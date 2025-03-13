@@ -1,0 +1,47 @@
+---
+import Logo from "./Logo.astro";
+import NavItems from "./NavItems.astro";
+---
+
+<div
+    class="navbar fixed left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-lg shadow-lg rounded-lg px-6 py-3 z-50 border border-white/30"
+>
+    <div class="navbar-start">
+        <!-- Mobile Menu (Hidden on lg) -->
+        <div class="dropdown lg:hidden">
+            <div tabindex="0" role="button" class="btn btn-ghost">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h8m-8 6h16"></path>
+                </svg>
+            </div>
+            <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-white/90 rounded-box z-10 mt-3 w-52 p-2 shadow"
+            >
+                <NavItems />
+            </ul>
+        </div>
+
+        <!-- Desktop Menu (Hidden on small screens) -->
+        <div class="hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <NavItems />
+            </ul>
+        </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="navbar-end">
+        <Logo />
+    </div>
+</div>

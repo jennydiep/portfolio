@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import programmer from "../assets/programmer.svg";
+---
+
+<div
+    id="home"
+    class="hero bg-base-200 min-h-screen bg-gradient-to-br from-base-300 via-base to-[var(--color-accent-light)]"
+>
+    <div class="hero-content flex-col lg:flex-row-reverse">
+        <Image
+            class="w-125 px-20 h-auto"
+            src={programmer}
+            alt="A bird sitting on a nest of eggs."
+        />
+        <div class="">
+            <h1 class="text-5xl font-bold">Hi, I'm Jenny Diep</h1>
+            <div class="py-5 pb-15">
+                <p class="py-2">Software Engineer</p>
+                <div class="badge badge-soft badge-primary">Mobile</div>
+                <div class="badge badge-soft badge-secondary">Android</div>
+                <div class="badge badge-soft badge-accent">Full Stack</div>
+            </div>
+
+            <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+        </div>
+    </div>
+</div>

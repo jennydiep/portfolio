@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import localBirdImage from "../assets/Jd.svg";
+---
+
+<div class="relative flex items-center justify-end w-12 h-12 group">
+    <!-- Wrapper for Hover Effect -->
+    <div class="relative w-10 h-10">
+        <!-- Pink Square (Starts Bottom-Right, Moves to Blue on Hover) -->
+        <div
+            class="w-10 h-10 bg-[#E4D8DC] z-10 transform translate-x-2 translate-y-2 transition-transform duration-500 group-hover:translate-x-0 group-hover:translate-y-0"
+        >
+        </div>
+
+        <!-- Blue Square (Triggers Hover, Stays Static) -->
+        <div
+            class="w-10 h-10 bg-[#93B5C6] absolute top-0 left-0 transition-colors duration-500 z-20 group-hover:bg-[#7895C6]"
+        >
+        </div>
+    </div>
+
+    <!-- Logo Image (Triggers Hover Too) -->
+    <div id="logo-icon" class="w-10 p-2 -ml-10 z-30">
+        <Image src={localBirdImage} alt="A bird sitting on a nest of eggs." />
+    </div>
+</div>
