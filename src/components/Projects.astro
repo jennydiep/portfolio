@@ -1,0 +1,40 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import crib from "../assets/baby-crib.jpg";
+import crablabs from "../assets/crablabs.png";
+import patientmonitor from "../assets/patientmonitor.png";
+import remoteadmin from "../assets/remotepage.png";
+import ProjectCardWeb from "./ProjectCardWeb.astro";
+---
+
+<section class="container mx-auto px-4 py-10 space-y-12">
+    <ProjectCard
+        title="Patient Monitoring Data Collection"
+        description="Patient monitoring Android mobile application collection sensor, video, and audio data stored on the cloud. Written in Kotlin, and Jetpack Compose"
+        image={patientmonitor}
+        link="https://www.rekovar.com/"
+        linkLabel="www.rekovar.com"
+    />
+
+    <ProjectCard
+        title="Smart Home Baby Monitor"
+        description="Cross platform (iOS and Android) mobile app for remote baby monitoring. Displays real time sensor data, video, and audio streaming. Written in Kotlin, and Compose Multiplatform"
+        image={crib}
+        reverse={true}
+    />
+
+    <ProjectCardWeb
+        title="Crab Labs Website"
+        description="Professional website for client showcasing engineering services, written in Astro, and Tailwind CSS."
+        image={crablabs}
+        link="https://www.crablabs.io/"
+        linkLabel="www.crablabs.io"
+    />
+
+    <ProjectCard
+        title="Remote Admin Configuration"
+        description="Remote admin GUI for configuring power monitoring system. Responsive front end written in NextJS, React, and MUI."
+        image={remoteadmin}
+        reverse={true}
+    />
+</section>

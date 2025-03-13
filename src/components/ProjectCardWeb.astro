@@ -1,0 +1,39 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+export interface Props {
+    title: string;
+    description: string;
+    image: ImageMetadata;
+    reverse?: boolean; // If true, image appears on the right instead
+    link?: string;
+    linkLabel?: string;
+}
+
+const { title, description, image, reverse, link, linkLabel } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <!-- Web Column (Switches Order on Large Screens) -->
+    <div class="mockup-browser border border-base-300 w-full">
+        <div class="mockup-browser-toolbar">
+            <div class="input">{link}</div>
+        </div>
+        <!-- <div class="grid place-content-center h-80">Hello!</div> -->
+        <Image src={image} alt={title} class="grid place-content-center" />
+    </div>
+
+    <!-- Text Column -->
+    <div class="w-full p-6">
+        <h2 class="text-3xl font-bold text-accent">{title}</h2>
+        <p class="mt-4 text-base-content">{description}</p>
+        {
+            link && (
+                <a class="link link-accent" href={link}>
+                    <p class="mt-4">{linkLabel}</p>
+                </a>
+            )
+        }
+    </div>
+</div>

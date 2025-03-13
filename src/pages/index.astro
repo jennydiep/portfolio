@@ -1,8 +1,85 @@
 ---
 import Hero from "../components/Hero.astro";
+import Projects from "../components/Projects.astro";
 import Layout from "../layouts/Layout.astro";
+import Resume from "../components/Resume.astro";
+import profile from "../assets/jenny-picture.jpeg";
+import resumePDF from "../assets/JennyDiepResume_2-19-2025-1.pdf";
+import Footer from "../components/Footer.astro";
+import Links from "../components/Links.astro";
+
+const experience = [
+	{
+		year: "Aug 2024- Present",
+		title: "Software Engineer (Contractor)",
+		badge: ["Crab Labs LLC", "Remote"],
+		description: [
+			"Designed UI/UX mockups in Figma for power consumption monitoring system.",
+			"Developed company website with Astro and TailwindCSS",
+			"Integrated remote admin configuration web frontend utilizing REST API, NextJS, React, and Material UI.",
+		],
+	},
+	{
+		year: "Jan 2024 - Present",
+		title: "Software Engineer",
+		badge: ["Rekovar, Inc", "Remote"],
+		description: [
+			"Secured $2M in NIH SBIR grant funding for innovation in AI for neonatal abstinence syndrome (NAS) and accepted into Nvidia Inception Program for startups.",
+			"Lead design and development of infant monitoring mobile application for home use capable of live video streaming and live sensor data charting.",
+			"Developed cross-platform mobile application using Kotlin Multiplatform and Compose Multiplatform which supports Android and iOS.",
+		],
+	},
+	{
+		year: "Jan 2023 - Jan 2024",
+		title: "Junior Software Engineer",
+		badge: ["Rekovar, Inc", "Lake Forest, CA"],
+		description: [
+			"Developed a patient monitoring/data collection Android application in Kotlin with video, audio, and Bluetooth Low Energy (BLE) integration for in hospital use.",
+			"Streamlined data analysis backend for data engineering team, integrating AWS cloud services such as S3 and DynamoDB database.",
+			"Designed CICD pipelines for automated testing and integrated remote error logging with Sentry reducing crashes by 30%.",
+			"Developed company website to boost company visibility and engagement by 20%.",
+		],
+	},
+];
+
+const education = [
+	{
+		year: "June 2021",
+		title: "B.S. in Computer Science",
+		badge: [],
+		description: ["University of California, Irvine"],
+	},
+];
+
+const linkedin = "https://www.linkedin.com/in/jenny-diep-1580a1177/";
+const github = "https://github.com/jennydiep";
+const resume = resumePDF;
 ---
 
 <Layout>
 	<Hero />
+	<h1
+		id="portfolio"
+		class="text-4xl font-bold text-center text-primary my-10"
+	>
+		Portfolio
+	</h1>
+	<Projects />
+	<h1 id="resume" class="text-4xl font-bold text-center text-primary my-10">
+		Resume
+	</h1>
+	<Links
+		profile={profile}
+		github={github}
+		linkedin={linkedin}
+		resume={resume}
+	/>
+	<h1 class="text-2xl font-bold text-center text-primary my-10">
+		Work Experience
+	</h1>
+	<Resume timeline={experience} />
+
+	<h1 class="text-2xl font-bold text-center text-primary my-10">Education</h1>
+	<Resume timeline={education} />
+	<Footer />
 </Layout>
