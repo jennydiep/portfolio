@@ -3,7 +3,7 @@
 A portfolio website built with Astro.
 
 
-![](src\assets\website-screenshot.png)
+![](src/assets/website-screenshot.png)
 
 ## 🚀 Project Structure
 
